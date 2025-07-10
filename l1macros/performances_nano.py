@@ -195,7 +195,7 @@ def main():
     # add nvtx histo
     nvtx_histo = df.Histo1D(ROOT.RDF.TH1DModel("h_nvtx" , "Number of reco vertices;N_{vtx};Events"  ,    100, 0., 100.), "PV_npvs")
 
-        
+    df = h.PassPFJetID(df)
     if args.channel == 'PhotonJet':
         df = h.SinglePhotonSelection(df) 
         
